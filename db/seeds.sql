@@ -1,0 +1,1 @@
+INSERT INTO burgers (burger_name, devoured) VALUES ('Mr Falafal BeaurGeaur', false);
