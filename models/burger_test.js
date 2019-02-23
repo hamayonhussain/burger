@@ -1,4 +1,3 @@
-
 // Import the burger model to gain access to the database functions
 var burger = require('./burger.js');
 
@@ -21,17 +20,19 @@ burger.selectAll(function (data) {
 });
 
 // Insert a single entry into the database
-burger.insertOne(['burger_name', 'devoured'], 
-	         	 ['Late Night Juicy Burger', false], 
-	    		 function (data) {
-					console.log('\n\nburger.insertOne test...\n\n');
+burger.insertOne(['burger_name', 'devoured'],
+	['Late Night Juicy Burger', false],
+	function (data) {
+		console.log('\n\nburger.insertOne test...\n\n');
 
-					console.log('Inserted new row with ID = ' + data.insertId + '\n\n');
-				 }
+		console.log('Inserted new row with ID = ' + data.insertId + '\n\n');
+	}
 );
 
 // Update a single entry in the database
-burger.updateOne({devoured: true}, 'id = 10', function (data) {
+burger.updateOne({
+	devoured: true
+}, 'id = 10', function (data) {
 	console.log('\n\nburger.updateOne test...\n\n');
 
 	console.log('Result: ' + data.message);
